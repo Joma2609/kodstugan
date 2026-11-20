@@ -30,7 +30,7 @@ namespace Felsokning_lab
                 summan = summan + talen[i];
             }
 
-            double medelvardet = summan / talen.Length;
+            double medelvardet = (double)summan / talen.Length;
 
             txtResult1.Text = $"Programmet säger: medelvärdet är {medelvardet}";
         }
@@ -42,9 +42,9 @@ namespace Felsokning_lab
             int slutTal = int.Parse(txtInput2.Text);
 
             int summan = 0;
-            for (int i = 1; i < slutTal; i++)
+            for (int i = 1; i <= slutTal; i++)
             {
-                summan = i;
+                summan = summan + i;
             }
 
             txtResult2.Text = $"Programmet säger: summan är {summan}";
@@ -59,7 +59,7 @@ namespace Felsokning_lab
             int storstaTalet = 0;
             for (int i = 0; i < talen.Length; i++)
             {
-                if (talen[i] < storstaTalet)
+                if (talen[i] > storstaTalet)
                 {
                     storstaTalet = talen[i];
                 }
@@ -77,7 +77,7 @@ namespace Felsokning_lab
             int antalJamnaTal = 0;
             for (int i = 0; i < talen.Length; i++)
             {
-                if (talen[i] % 2 == 1)
+                if (talen[i] % 2 == 0)
                 {
                     antalJamnaTal = antalJamnaTal + 1;
                 }
@@ -90,12 +90,13 @@ namespace Felsokning_lab
         // För 27 °C ska rätt svar vara 80,6 °F och "Det är varmt".
         private void OnEx5Click(object sender, RoutedEventArgs e)
         {
-            int celsius = int.Parse(txtInput5.Text);
+            double celsius = double.Parse(txtInput5.Text);
+            
 
-            double fahrenheit = celsius * 9 / 5 + 32;
+            double fahrenheit = (celsius * 9) / 5 + 32;
 
             string meddelande;
-            if (celsius >= 80)
+            if (fahrenheit >= 80)
             {
                 meddelande = "Det är varmt.";
             }
@@ -110,15 +111,27 @@ namespace Felsokning_lab
         // ---------- Övning 6 – Nästlade loopar (skriv koden själv) ----------
         // Uppgift: rita en rätvinklig triangel av stjärnor med höjden N
         // med hjälp av TVÅ nästlade for-loopar. Skriv resultatet till txtResult6.
+        string star = "*";
         private void OnEx6Click(object sender, RoutedEventArgs e)
         {
+            string resultat = "";
             int hojd = int.Parse(txtInput6.Text);
+            for (int rad = 0; rad <= hojd; rad++)
+            {
+                for (int stjerna = 1; stjerna <= rad; stjerna++)
+                {
+                    resultat += "*";
+                }
+                resultat += "\n"; 
+            }
 
             // TODO: Skriv din kod här med två nästlade for-loopar.
             // Den yttre loopen styr antalet rader (1 till hojd).
             // Den inre loopen skriver ut rätt antal stjärnor på varje rad.
 
-            txtResult6.Text = "Här ska din triangel visas.";
+
+            txtResult6.Text = resultat;
+            ;
         }
     }
 }
