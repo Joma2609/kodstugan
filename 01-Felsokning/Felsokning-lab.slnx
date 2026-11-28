@@ -1,3 +1,7 @@
 <Solution>
+  <Project Path="../../source/repos/ik118g-labb-1-joma2609/AverageLength-lab/AverageLength-lab.csproj" />
+  <Project Path="../../source/repos/ik118g-labb-1-joma2609/DrinkWater-lab/DrinkWater-lab.csproj" />
+  <Project Path="../../source/repos/ik118g-labb-1-joma2609/LottoMachine-lab/LottoMachine-lab.csproj" />
+  <Project Path="../02-Chateau/Chateau-lab.csproj" />
   <Project Path="Felsokning-lab.csproj" />
 </Solution>

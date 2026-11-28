@@ -111,18 +111,19 @@ namespace Felsokning_lab
         // ---------- Övning 6 – Nästlade loopar (skriv koden själv) ----------
         // Uppgift: rita en rätvinklig triangel av stjärnor med höjden N
         // med hjälp av TVÅ nästlade for-loopar. Skriv resultatet till txtResult6.
-        string star = "*";
+        // string star = "*";
         private void OnEx6Click(object sender, RoutedEventArgs e)
         {
             string resultat = "";
             int hojd = int.Parse(txtInput6.Text);
+
             for (int rad = 0; rad <= hojd; rad++)
             {
-                for (int stjerna = 1; stjerna <= rad; stjerna++)
+                for (int stjarna = 1; stjarna <= rad; stjarna++)
                 {
                     resultat += "*";
                 }
-                resultat += "\n"; 
+                resultat += "\n"; // höjd == rader
             }
 
             // TODO: Skriv din kod här med två nästlade for-loopar.
